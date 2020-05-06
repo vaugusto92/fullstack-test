@@ -1,0 +1,22 @@
+# compiled output
+/target
+
+# server
+.project
+.classpath
+.settings
+/server/.settings
+/server/target
+/server/.factorypath
+
+# keys
+/server/src/main/resources/keys/owmApiKey.key
+/server/src/main/resources/keys/spotifyClientID.key
+/server/src/main/resources/keys/spotifyClientSecret.key
+
+# frontend
+/frontend/node_modules
+
+
+# IDE - VSCode
+.vscode/

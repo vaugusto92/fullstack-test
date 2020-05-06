@@ -25,3 +25,70 @@ You can make usage of OpenWeatherMaps API (https://openweathermap.org) to fetch 
 
 ## Submission
 Fork this project and share it with your interviwer
+
+# Solution - "PlaylistGen"
+
+### Programming Language and Technologies
+
+* Java 14
+* Spring
+* Maven
+* JUnit
+* Angular 9
+
+### How to run
+
+First of all, it is necessary to extract the "keys.tar" file into the "server/src/main/resources/keys" folder. The following packages are necessary:
+
+* node.js
+* npm
+* angular-cli
+* maven
+
+For tests, enter the server folder and enter the command:
+
+```
+mvn test
+```
+
+Still in the server folder, to run the server application:
+
+```
+mvn spring-boot:run
+```
+
+For the Angular application, open a new terminal, navigate to the "frontend" folder and enter the commands:
+
+```
+npm install
+```
+
+```
+ng serve
+```
+
+### API
+
+The service is listening on port 8080 by default.
+
+The endpoints to retrieve weather information are:
+
+* /weather?city=(city name)
+* /weather?lon=(longitude)&lat=(latitude)
+
+The endpoints to retrieve playlist information are:
+
+* /credentials
+* /playlist?genre=(genre)
+
+### Front-end
+
+The home page offers a drop-down menu to select the search method (either City or Geographic Coordinates). The input data is validated both in the client and server sides. After a successful search, the application navigates to "/recommendations" and presents a table with tracks, as well as some information about the selected location.
+
+
+### Future work
+
+* Find a way to encrypt the keys;
+* Find out which logging framework would be the best;
+* Find a way to implement a thread-like way for several requests at the same time;
+* Implement unit and integration tests for the service and controller classes.

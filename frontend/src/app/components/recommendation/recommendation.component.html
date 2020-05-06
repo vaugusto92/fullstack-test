@@ -1,0 +1,29 @@
+<div>
+  <div class="card-body text-center text-white">
+    <h1 *ngIf="weather">Your place: {{ weather.name }}</h1>
+    <h2 *ngIf="weather">Genre: {{ weather.main.genre }}</h2>
+    <p *ngIf="weather">
+      Temperature: {{ weather.main.temp }} °C<br>
+      Location: ({{ weather.coord.lon }}, {{ weather.coord.lat }})<br>
+    </p>
+    <div class="container row d-flex justify-content-center text-left">
+      <div class="jumbotron">
+        <table class="table text-white">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Track</th>
+              <th scope="col">Artists</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let track of playlist">
+              <td>{{ track.name }}</td>
+              <td>{{ track.artistList }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

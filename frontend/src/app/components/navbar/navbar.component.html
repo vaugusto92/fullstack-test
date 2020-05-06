@@ -1,0 +1,10 @@
+<div class="header p-2 d-flex justify-content-around dark">
+    <h1>PlaylistGen</h1>
+    <nav class="navbar navbar-expand">
+    <ul class="navbar-nav">
+        <li class="nav-item" [ngClass]="{'d-none': showReturn }">
+            <a class="nav-link" [routerLink]="['/']" (click)="onClickHome()">Return</a>
+        </li>
+    </ul>
+    </nav>
+</div>

@@ -1,0 +1,71 @@
+<div>
+    <div class="card-body text-center">
+        <h1>Explore and Discover</h1>
+        <p>Retrieve some music to enhance your mood according to your environment.<br>
+            Suggestions are among classical, pop, rock and party songs.
+        </p>
+
+        <div class="container row d-flex justify-content-center">
+            <div class="jumbotron">
+
+                <div class="dropdown">
+                    <h4 class="text-center">Search by
+                        <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{searchInput.description}}
+                        </button>
+                        <div class="dropdown-menu bg-dark" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" *ngFor="let type of inputTypes"
+                                (click)="chooseSearchInput(type)">{{type.description}}</a>
+                        </div>
+                    </h4>
+                </div>
+
+                <div class="container">
+                    <form (submit)="onSubmit()">
+
+                        <div class="form-row justify-content-center" *ngIf="searchInput.id == 1">
+                            <!-- Grid column -->
+                            <div class="col-md-8">
+                                <!-- Material input -->
+                                <div class="md-form form-group">
+                                    <label for="cityName">City Name</label>
+                                    <input class="form-control" id="teste" type="text" [(ngModel)]="cityName"
+                                        name="cityName" required>
+                                </div>
+                                <!-- Grid column -->
+                            </div>
+                        </div>
+                        <!-- Grid row -->
+
+                        <div class="form-row justify-content-center" *ngIf="searchInput.id == 2">
+                            <!-- Grid column -->
+                            <div class="col-md-3">
+                                <div class="md-form form-group">
+                                    <label for="longitude">Longitude</label>
+                                    <input class="form-control" id="longitude" type="text" [(ngModel)]="longitude"
+                                        name="longitude">
+                                </div>
+                            </div>
+                            <!-- Grid column -->
+                            
+                            <span aria-hidden="true">&nbsp;</span>
+                            
+                            <div class="col-md-3">
+                                <!-- Material input -->
+                                <div class="md-form form-group">
+                                    <label for="latitude">Latitude</label>
+                                    <input class="form-control" id="latitude" type="text" [(ngModel)]="latitude"
+                                        name="latitude"> </div>
+                            </div>
+                            <!-- Grid column -->
+                        </div>
+                        <!-- Grid row -->
+
+                        <button type="submit" class="btn btn-dark">Go</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
